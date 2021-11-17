@@ -77,4 +77,4 @@ jekyll serve
 
 ### Contributing
 
-Feel free to [open a bug](https://github.com/agusmakmun/agusmakmun.github.io/issues) or [contribute to code](https://github.com/agusmakmun/agusmakmun.github.io/pulls)!
+Feel free to [open a bug](https://github.com/yellowpart/yellowpart.github.io/issues) or [contribute to code](https://github.com/yellowpart/yellowpart.github.io/pulls)!
