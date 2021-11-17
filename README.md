@@ -22,8 +22,8 @@
 * HTML Minify _(Compress HTML)_ using [Jekyll Compress HTML](https://github.com/penibelst/jekyll-compress-html)
 
 #### Screenshot
-
-![Screenshot Post Page](https://raw.githubusercontent.com/yellowpart/yellowpart.github.io/master/static/img/screenshot-post-page.png  "Screenshot Post Page")
+![Screenshot Post Page](https://www.google.com/imgres?imgurl=https%3A%2F%2Fd2gg9evh47fn9z.cloudfront.net%2F800px_COLOURBOX12222299.jpg&imgrefurl=https%3A%2F%2Fwww.colourbox.com%2Fimage%2Fyellow-party-ballons-on-white-background-image-12222299&tbnid=Q44i44ia1I88eM&vet=12ahUKEwioyuiToZ_0AhULTPUHHSRkBfMQMygNegUIARC9AQ..i&docid=eJQR1NCZnt8mBM&w=800&h=600&q=yellow%20party&ved=2ahUKEwioyuiToZ_0AhULTPUHHSRkBfMQMygNegUIARC9AQ)
+#![Screenshot Post Page](https://raw.githubusercontent.com/yellowpart/yellowpart.github.io/master/static/img/screenshot-post-page.png  "Screenshot Post Page")
 
 ### Install & Configuration
 
