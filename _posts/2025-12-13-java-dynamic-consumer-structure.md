@@ -27,10 +27,6 @@ flowchart TD
     I -- 파일 수정 감지 --> J[기존 종료 및 재시작]
     J --> C
 
-    style A fill:#f9f,stroke:#333
-    style C fill:#e1f,stroke:#015
-    style E fill:#fbb,stroke:#c00
-    style F fill:#bfb,stroke:#080
 </pre>
 
 <script type="module">
