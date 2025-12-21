@@ -71,3 +71,12 @@ layout: default
     /* ]]> */
   </script>
 </div>
+            
+  <script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: 'default', // 테마를 'dark', 'forest', 'neutral' 등으로 바꿀 수 있습니다.
+    securityLevel: 'loose'
+  });
+</script>
