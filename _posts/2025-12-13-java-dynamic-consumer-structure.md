@@ -7,15 +7,39 @@ tags: [WatchService, StrategyPattern, Consumer, Redis, RabbitMQ]
 ---
 
 ## 시스템 클래스 구조
-<div class="mermaid">
-classDiagram
-    direction TB
-    class Consumer { <<interface>> }
-    class AbstractConsumer { <<abstract>> }
-    Consumer <|.. AbstractConsumer
-    AbstractConsumer <|-- RedisConsumer
-    AbstractConsumer <|-- RabbitConsumer
-</div>
+## 시스템 구성 및 실행 흐름도
+
+<pre class="mermaid" id="my-diagram">
+flowchart TD
+    A([프로그램 시작]) --> B[PropertyLoader]
+    B --> C{DynamicConsumerMain}
+    
+    C --> D{Consumer 결정}
+    D -- use.redis --> E[RedisConsumer]
+    D -- use.rabbitmq --> F[RabbitConsumer]
+    
+    E --> G[AbstractConsumer 상속]
+    F --> G
+    
+    G --> H[connect 및 start 실행]
+    H --> I[WatchService 감시 루프]
+    
+    I -- 파일 수정 감지 --> J[기존 종료 및 재시작]
+    J --> C
+
+    style A fill:#f9f,stroke:#333
+    style C fill:#e1f,stroke:#015
+    style E fill:#fbb,stroke:#c00
+    style F fill:#bfb,stroke:#080
+</pre>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  // 테마의 간섭을 피하기 위해 직접 호출
+  mermaid.run({
+    nodes: [document.getElementById('my-diagram')],
+  });
+</script>
 
 ## 컨슈머 동적 교체 흐름
 <div class="mermaid">
