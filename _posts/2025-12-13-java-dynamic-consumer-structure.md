@@ -6,6 +6,13 @@ categories: [java, concurrency, design-pattern]
 tags: [WatchService, StrategyPattern, Consumer, Redis, RabbitMQ]
 ---
 
+<div class="mermaid">
+graph TD
+    A[설정 로드] --> B{파일 감시}
+    B -- 변경됨 --> C[기존 종료]
+    C --> D[새 컨슈머 시작]
+</div>
+
 ## 🚀 프로젝트 개요: 동적 Consumer 관리 시스템
 
 이 포스트는 Java NIO의 `WatchService`를 활용하여 외부 설정 파일(`.properties`)의 변경을 실시간으로 감지하고, 설정에 따라 실행 중인 메시지 Consumer(Redis 또는 RabbitMQ)를 안전하게 동적으로 교체하는 시스템의 핵심 코드를 소개합니다. 이는 **Strategy Pattern**과 **Observer Pattern**을 결합하여 유연하고 확장 가능한 아키텍처를 구현한 예시입니다.
