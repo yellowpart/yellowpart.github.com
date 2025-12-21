@@ -6,11 +6,27 @@ categories: [java, concurrency, design-pattern]
 tags: [WatchService, StrategyPattern, Consumer, Redis, RabbitMQ]
 ---
 
+## 시스템 클래스 구조
 <div class="mermaid">
-graph TD
-    A[설정 로드] --> B{파일 감시}
-    B -- 변경됨 --> C[기존 종료]
-    C --> D[새 컨슈머 시작]
+classDiagram
+    direction TB
+    class Consumer { <<interface>> }
+    class AbstractConsumer { <<abstract>> }
+    Consumer <|.. AbstractConsumer
+    AbstractConsumer <|-- RedisConsumer
+    AbstractConsumer <|-- RabbitConsumer
+</div>
+
+## 컨슈머 동적 교체 흐름
+<div class="mermaid">
+sequenceDiagram
+    participant Config as a.properties
+    participant Watcher as WatchService
+    participant Main as DynamicMain
+    
+    Watcher->>Main: 파일 변경 감지
+    Main->>Main: 기존 컨슈머 종료(close)
+    Main->>Main: 새 컨슈머 생성 및 시작
 </div>
 
 ## 🚀 프로젝트 개요: 동적 Consumer 관리 시스템
