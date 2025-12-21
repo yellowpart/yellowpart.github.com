@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Java Dynamic Consumer: 런타임 설정 변경과 Consumer 교체"
-date: 2025-12-14 07:36:26 +0900
+date: 2025-12-13 07:36:26 +0900
 categories: [java, concurrency, design-pattern]
 tags: [WatchService, StrategyPattern, Consumer, Redis, RabbitMQ]
 ---
