@@ -9,40 +9,42 @@ tags: [WatchService, StrategyPattern, Consumer, Redis, RabbitMQ]
 ## 시스템 클래스 구조
 ## 시스템 구성 및 실행 흐름도
 
-<pre class="mermaid" id="my-diagram">
-flowchart TD
-    A([프로그램 시작]) --> B[PropertyLoader]
-    B --> C{DynamicConsumerMain}
-    
-    C --> D{Consumer 결정}
-    D -- use.redis --> E[RedisConsumer]
-    D -- use.rabbitmq --> F[RabbitConsumer]
-    
-    E --> G[AbstractConsumer 상속]
-    F --> G
-    
-    G --> H[connect 및 start 실행]
-    H --> I[WatchService 감시 루프]
-    
-    I -- 파일 수정 감지 --> J[기존 종료 및 재시작]
-    J --> C
+<div id="mermaid-container" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+  <pre class="mermaid" style="background: none !important; display: flex; justify-content: center;">
+    flowchart TD
+        %% 전체 선 색상 검은색으로 강제 고정
+        linkStyle default stroke:#333,stroke-width:2px;
 
-    style A fill:#f9f,stroke:#333
-    style C fill:#e1f,stroke:#015
-    style E fill:#fbb,stroke:#c00
-    style F fill:#bfb,stroke:#080
-    
-</pre>
+        A([프로그램 시작]) --> B[PropertyLoader]
+        B --> C{DynamicMain}
+        
+        C --> D{Consumer 결정}
+        D -- use.redis --> E[RedisConsumer]
+        D -- use.rabbitmq --> F[RabbitConsumer]
+        
+        E --> G[AbstractConsumer 상속]
+        F --> G
+        
+        G --> H[connect 및 start 실행]
+        H --> I[WatchService 감시 루프]
+        
+        I -- 파일 수정 감지 --> J[기존 종료 및 재시작]
+        J --> C
+
+        %% 노드 스타일 (밝은 배경에 잘 보이도록)
+        style A fill:#ff99cc,stroke:#333
+        style C fill:#bbdefb,stroke:#01579b
+        style E fill:#ffcdd2,stroke:#c62828
+        style F fill:#c8e6c9,stroke:#2e7d32
+  </pre>
+</div>
 
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ 
     startOnLoad: true,
-    theme: 'dark', // 배경이 어두울 때는 'dark' 테마가 가장 잘 보입니다.
-    themeVariables: {
-      lineColor: '#ffffff', // 선 색상을 흰색으로 강제 지정
-      primaryColor: '#333333' // 박스 내부 색상 조절
-    }
+    theme: 'default', // 밝은 테마 사용
+    securityLevel: 'loose'
   });
 </script>
 
