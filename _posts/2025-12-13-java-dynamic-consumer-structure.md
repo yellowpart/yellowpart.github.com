@@ -39,15 +39,6 @@ tags: [WatchService, StrategyPattern, Consumer, Redis, RabbitMQ]
   </pre>
 </div>
 
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ 
-    startOnLoad: true,
-    theme: 'default', // 밝은 테마 사용
-    securityLevel: 'loose'
-  });
-</script>
-
 ## 컨슈머 동적 교체 흐름
 <div class="mermaid">
 sequenceDiagram
