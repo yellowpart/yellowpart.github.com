@@ -9,11 +9,11 @@ tags: [WatchService, StrategyPattern, Consumer, Redis, RabbitMQ]
 ## 시스템 클래스 구조
 ## 시스템 구성 및 실행 흐름도
 
-<div id="mermaid-container" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
-  <pre class="mermaid" style="background: none !important; display: flex; justify-content: center;">
+<div id="mermaid-canvas" style="background-color: #ffffff; padding: 25px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+  <pre class="mermaid" style="background: white !important; color: black !important; font-family: sans-serif;">
     flowchart TD
-        %% 전체 선 색상 검은색으로 강제 고정
-        linkStyle default stroke:#333,stroke-width:2px;
+        %% 선 색상 강제 지정
+        linkStyle default stroke:#000000,stroke-width:2px;
 
         A([프로그램 시작]) --> B[PropertyLoader]
         B --> C{DynamicMain}
@@ -31,13 +31,27 @@ tags: [WatchService, StrategyPattern, Consumer, Redis, RabbitMQ]
         I -- 파일 수정 감지 --> J[기존 종료 및 재시작]
         J --> C
 
-        %% 노드 스타일 (밝은 배경에 잘 보이도록)
-        style A fill:#ff99cc,stroke:#333
-        style C fill:#bbdefb,stroke:#01579b
-        style E fill:#ffcdd2,stroke:#c62828
-        style F fill:#c8e6c9,stroke:#2e7d32
+        %% 노드 색상 (밝은 배경용)
+        style A fill:#FFC107,stroke:#333
+        style C fill:#03A9F4,stroke:#01579B,color:#fff
+        style E fill:#FFEBEE,stroke:#C62828
+        style F fill:#E8F5E9,stroke:#2E7D32
   </pre>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  // 라이브러리가 로드되었는지 확인 후 실행
+  if (typeof mermaid !== 'undefined') {
+    mermaid.initialize({ 
+      startOnLoad: true, 
+      theme: 'default',
+      flowchart: { useMaxWidth: true, htmlLabels: true }
+    });
+    // 강제 렌더링 시도
+    mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+  }
+</script>
 
 ## 컨슈머 동적 교체 흐름
 <div class="mermaid">
