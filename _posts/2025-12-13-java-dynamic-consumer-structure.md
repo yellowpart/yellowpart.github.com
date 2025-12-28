@@ -357,4 +357,3 @@ public class DynamicConsumerMain {
 }
 {% endhighlight %}
 
-이제 이 마크다운 파일을 `.md` 확장자로 저장하시면 Jekyll 기반 블로그에 쉽게 게시하실 수 있습니다.
