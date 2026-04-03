@@ -82,17 +82,3 @@ Feel free to [open a bug](https://github.com/yellowpart/yellowpart.github.io/iss
 ### Contributing
 
 Feel free to [open a bug](https://github.com/yellowpart/yellowpart.github.io/issues) or [contribute to code](https://github.com/yellowpart/yellowpart.github.io/pulls)!
-
-### 배운점
-
-오늘 실습을 하면서 파이썬의 기본 입출력 구조를 익혔다.  
-`print()`를 사용하면 숫자와 문자를 출력할 수 있고, 문자는 따옴표로 감싸야 한다는 점을 확인했다.
-
-또한 `print()` 안에서 `,`로 값을 나열하면 띄어쓰기가 들어가고, `+`로 연결하면 문자열이 붙어서 출력된다는 차이도 배웠다.
-
-그리고 숫자 계산에서는 `**`가 제곱, `//`가 몫, `%`가 나머지를 구하는 연산자라는 것도 실습을 통해 이해했다.
-
-입력 부분에서는 `input()`을 사용해 사용자가 값을 입력할 수 있다는 것을 배웠고, 입력한 값이 변수에 저장되어 나중에 다시 사용할 수 있다는 점도 알게 되었다.
-
-마지막으로, 출력 → 입력 → 변수 저장 → 순차 실행처럼 기본 개념을 차근차근 익히는 것이 중요하다는 것을 느꼈다.
-
